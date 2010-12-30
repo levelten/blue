@@ -1,0 +1,9 @@
+<?php
+
+function blue_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'picture_node_form') {
+    unset($form['buttons']['preview']);
+    $form['buttons']['submit']['#value'] = 'Blue Me!';
+    $form['field_picture'][0]['#title'] = '';
+  }
+}
