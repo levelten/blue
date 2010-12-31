@@ -21,7 +21,7 @@ function blue_yourself_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'blueme_default',
+        'format' => 'blueme_imagelink',
         'exclude' => 0,
       ),
       '4' => array(
@@ -48,7 +48,7 @@ function blue_yourself_content_default_fields() {
       'progress_indicator' => 'bar',
       'max_filesize_per_file' => '4MB',
       'max_filesize_per_node' => '',
-      'max_resolution' => '0',
+      'max_resolution' => '1024x768',
       'min_resolution' => '0',
       'alt' => '',
       'custom_alt' => 0,

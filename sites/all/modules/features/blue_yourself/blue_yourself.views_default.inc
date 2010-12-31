@@ -104,8 +104,8 @@ function blue_yourself_views_default_views() {
   ));
   $handler->override_option('cache', array(
     'type' => 'time',
-    'results_lifespan' => '60',
-    'output_lifespan' => '60',
+    'results_lifespan' => '300',
+    'output_lifespan' => '-1',
   ));
   $handler->override_option('header', '<div class="clear-block" style="margin-bottom: 50px;">
 
@@ -116,12 +116,15 @@ function blue_yourself_views_default_views() {
 In honor of release of Drupal 7 we encourage everyone to "blue themselves" on their profile pictures on facebook, twitter, linked in and anywhere else.  
 
 Just submit your photo to get a "blue" version of it.
-
-<a href="/node/add/picture">Click here to Blue Yourself!</a>
+<?php 
+module_load_include(\'inc\', \'node\', \'node.pages\');
+print node_add(\'picture\'); 
+drupal_set_title(\'\');
+?>
 </div>
 </div>
 <h2> Who recently blue themselves.</h2>');
-  $handler->override_option('header_format', '2');
+  $handler->override_option('header_format', '3');
   $handler->override_option('header_empty', 1);
   $handler->override_option('items_per_page', 40);
   $handler->override_option('style_plugin', 'grid');
