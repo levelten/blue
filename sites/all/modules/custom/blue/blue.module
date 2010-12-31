@@ -7,3 +7,20 @@ function blue_form_alter(&$form, &$form_state, $form_id) {
     $form['field_picture'][0]['#title'] = '';
   }
 }
+
+function blue_link($type, $object, $teaser = FALSE) {
+  $links = array();
+  if ($type == 'node' && $object->type == 'picture') {
+    $links['download'] = array(
+      'title' => 'Download',
+      'href' => 'sites/default/files/imagecache/blueme/pictures/' . $object->field_picture[0]['filename'],
+    );
+  }
+  return $links;
+}
+
+function blue_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  if ($op == 'insert' && $node->type == 'picture') {
+    drupal_set_message('Your picture is being generated... Please wait.');
+  }
+}
