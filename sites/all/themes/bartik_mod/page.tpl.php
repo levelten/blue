@@ -126,10 +126,6 @@
         </div>
       <?php endif; ?>
 
-      <div id="theme-credits" class="grid_16">
-        <?php print t('Modified <a href="@bartik-project">Bartik</a> Drupal 7 theme, designed by Jen Simmons. Backported by <a href="@kahthong">Leow Kah Thong</a>.', array('@bartik-project' => url('http://drupal.org/project/bartik'), '@kahthong' => url('http://kahthong.com'))) ?>
-      </div>
-
       <div class="clear"></div>
     </div>
   </div>
